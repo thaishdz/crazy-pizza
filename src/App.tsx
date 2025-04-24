@@ -2,8 +2,8 @@ import PizzaList from "./components/PizzaList";
 
 function App() {
   const pizzas = [
-    { id: 1, name: "Pepperoni", description: "Delicious pizza with pepperoni and cheese", price: 10 },
-    { id: 2, name: "Margherita", description: "Classic pizza with tomato sauce and mozzarella cheese", price: 8 },
+    { id: 1, name: "Margherita", description: "Classic pizza with tomato sauce and mozzarella cheese price", price: 8 },
+    { id: 2, name: "Pepperoni", description: "Delicious pizza with pepperoni and cheese", price: 10 },
     { id: 3, name: "Hawaiian", description: "Classic pizza with ham, pineapple, and mozzarella cheese", price: 12 }
   ];
   return (
