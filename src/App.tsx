@@ -10,7 +10,7 @@ function App() {
     <>
       <h1 className="text-3xl font-bold font-mono text-center mt-5">Welcome to Crazy Pizza</h1>
       { pizzas.map(pizza => {
-        return <PizzaList pizza={pizza} />
+        return <PizzaList key={pizza.id} pizza={pizza} />
       })}
     </>
   )
