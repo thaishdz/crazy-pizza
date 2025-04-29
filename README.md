@@ -2,7 +2,7 @@
 
 Crazy Pizza is an easy-to-use pizza ordering application that lets users select and order pizzas online. The app is built with **React** and focuses on providing a simple and interactive user experience.
 
-![crazy pizza UI](image.png)
+![crazy pizza menu](image-1.png)
 
 ## Objetives 🎯
 The main objective of this project is to practice and improve my skills with React

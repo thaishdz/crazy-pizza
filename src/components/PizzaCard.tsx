@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import pizzaPic from '../assets/pizza.jpg';
-import QuantityButton from './QuantityButton';
+import QuantityControl from './QuantityControl';
+
 
 interface PizzaCardProps {
   pizza: {
@@ -30,22 +31,27 @@ export default function PizzaCard({pizza, onQuantityChange}: PizzaCardProps) {
   },[count, pizza.id, pizza.price, onQuantityChange]);
 
   return (
-    <div className='max-w-md mx-auto mt-4'>
-      <div className='flex items-center gap-4 border-2 p-4'>
-        <img src={pizzaPic} alt="Pizza" className="w-20 h-20 object-cover rounded-full" />
-          <div>
-            <h1 className='text-2xl font-bold'>{pizza.name}</h1>
-            <p className='text-gray-500 italic mt-2'>{pizza.description}</p>
+    // TODO: Crear componenents Card y CardContent
+      <div className='max-w-md mx-auto mt-4'>
+        <div className='flex items-center justify-between border-2 p-4 rounded-lg shadow-sm'>
+          <img src={pizzaPic} alt="Pizza" className="w-20 h-20 object-cover rounded-full" />
+    
+          {/* Info de la pizza */}
+          <div className="flex-1 mx-4">
+            <div className="flex justify-between items-start">
+              <h1 className='text-lg font-bold'>{pizza.name}</h1>
+            </div>
+            <p className='text-gray-500 italic text-sm mt-1'>{pizza.description}</p>
           </div>
-          <div className="flex flex-col items-center">
-            <p className='text-lg mb-2 font-bold'>{pizza.price}€</p>
-            <QuantityButton  // 2. y se lo pasaste como prop
-              count={count} 
-              onIncrement={handleIncrement} // evento "onIncrement" que se dispara desde el componente hijo hacia el padre.
-              onDecrement={handleDecrement}
-            /> 
+          <div className="flex flex-col items-end gap-2">
+              <span className="font-mono font-bold">{pizza.price.toFixed(2)}€</span>
+              <QuantityControl
+                count={count}
+                onIncrement={handleIncrement}
+                onDecrement={handleDecrement}
+              />
           </div>
+        </div>
       </div>
-    </div>
-  )
+    );
 }
